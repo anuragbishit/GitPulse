@@ -1,42 +1,51 @@
 # GitPulse
 
 <div align="center">
-  <img src="https://raw.githubusercontent.com/yourusername/yourrepo/main/assets/logo.svg" alt="GitPulse Logo" width="220" />
+  <img src="assets/logo.svg" alt="GitPulse Logo" width="220" />
 </div>
 
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-0.115.5-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
   <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/MongoDB-Atlas%20%2B%20Local-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License" />
-</div>
-
-<p align="center">
-  <strong>GitHub Audience Intelligence & Analytics Dashboard</strong>
+  <img src="https://img.shields.io/badge/MongoDB-Local%20%2B%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
 </p>
 
-GitPulse is a full-stack analytics platform designed to help developers and creators understand their GitHub audience, repository performance, and engagement trends in one place. It combines live GitHub data with historical snapshots to surface actionable insights about growth, engagement, and content opportunity.
+<p align="center">
+  <strong>GitHub Audience Intelligence & Growth Analytics Platform</strong>
+</p>
+
+GitPulse is a full-stack analytics platform built to help developers and creators track, understand, and optimize their GitHub audience and repository performance. It brings together live GitHub data, historical snapshots, and intelligent insights in one streamlined dashboard.
+
+From follower trends to repository opportunities, GitPulse turns raw GitHub activity into meaningful, actionable intelligence.
+
+---
 
 ## Why GitPulse?
 
-GitHub alone provides raw metrics, but not the full story. GitPulse transforms that data into clear, actionable intelligence by tracking:
+GitHub exposes metrics, but not always the story behind them. GitPulse helps users answer questions like:
 
-- follower growth and attrition
-- following trends and audience behavior
-- repository performance and popularity
-- contribution patterns over time
-- historical insights for better decision-making
+- Is my audience growing or declining?
+- Which repositories are creating the most momentum?
+- Are follower gains sustainable?
+- Which projects deserve more attention?
+- What patterns emerge across audience and contribution behavior?
+
+---
 
 ## Key Features
 
-- Audience analytics and growth tracking
+- GitHub follower and following tracking
+- Historical audience snapshot analysis
 - Repository traffic and performance insights
-- Historical data snapshots in MongoDB
-- GitHub OAuth authentication
-- Personalized dashboard experience
-- AI-style recommendations and insights
-- Exportable analytics data
-- Responsive UI for desktop and tablet use
+- Contribution and engagement monitoring
+- AI-style recommendation engine
+- Modern dashboard for analytics overview
+- Exportable insight data
+- OAuth-based GitHub login flow
+- Responsive interface for desktop use
+
+---
 
 ## Tech Stack
 
@@ -45,16 +54,20 @@ GitHub alone provides raw metrics, but not the full story. GitPulse transforms t
 - Database: MongoDB
 - Authentication: GitHub OAuth
 - Styling: Tailwind CSS
-- Data Visualization: Recharts
-- Deployment-ready architecture for local and cloud environments
+- Visualization: Recharts
+- Deployment-ready architecture
 
-## Live Demo
+---
 
-<p align="center">
-  <img src="https://placehold.co/1400x800/0f172a/38bdf8?text=GitPulse+Dashboard+Preview" alt="GitPulse Dashboard Screenshot" width="100%" />
-</p>
+## Platform Preview
 
-## Project Architecture
+<div align="center">
+  <img src="assets/dashboard-preview.png" alt="GitPulse Dashboard Preview" width="100%" />
+</div>
+
+---
+
+## Project Structure
 
 ```text
 gitpulse/
@@ -69,10 +82,15 @@ gitpulse/
 │   ├── src/
 │   ├── public/
 │   ├── package.json
-│   └── next.config.ts
+│   ├── next.config.ts
+│   └── Dockerfile
+├── assets/
+│   ├── logo.svg
+│   └── dashboard-preview.png
 ├── docker-compose.yml
 ├── start.bat
 ├── run.ps1
 ├── README.md
 ├── render.yaml
-└── scripts/
+├── scripts/
+└── .gitignore
