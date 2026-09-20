@@ -1,85 +1,56 @@
-# GitPulse
+# GitPulse — GitHub Audience Tracker & Advanced Analytics
 
-<p align="center">
-  <img src="assets/logo.svg" alt="GitPulse Logo" width="220" />
-</p>
+<div align="center">
 
-<p align="center">
-  <img src="https://img.shields.io/badge/FastAPI-0.115.5-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
-  <img src="https://img.shields.io/badge/Next.js-15-000000?style=for-the-badge&logo=nextdotjs&logoColor=white" alt="Next.js" />
-  <img src="https://img.shields.io/badge/MongoDB-Local%20%2B%20Atlas-47A248?style=for-the-badge&logo=mongodb&logoColor=white" alt="MongoDB" />
-  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT License" />
-</p>
+[![FastAPI](https://img.shields.io/badge/Backend-FastAPI-009688?style=flat&logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/) [![Next.js](https://img.shields.io/badge/Frontend-Next.js%2015-000000?style=flat&logo=nextdotjs&logoColor=white)](https://nextjs.org/) [![MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248?style=flat&logo=mongodb&logoColor=white)](https://www.mongodb.com/) [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
-<p align="center">
-  <strong>GitHub Audience Intelligence & Growth Analytics Platform</strong>
-</p>
+</div>
 
-GitPulse is a full-stack analytics dashboard for tracking GitHub audience growth, repository performance, and engagement trends in one place. It combines live GitHub data, historical snapshots, and insights to help developers understand what is driving growth and opportunity.
+## About The Project
 
----
+GitPulse is an advanced full-stack GitHub audience tracking and intelligence platform built with **FastAPI**, **MongoDB**, and **Next.js 15**. On every sync, it fetches your followers, following lists, and repository traffic metrics from the GitHub REST API, diffs them against historical snapshots in MongoDB, and logs every change in an append-only event log.
 
-## Why GitPulse?
+### Key Features
 
-GitPulse helps answer questions like:
-
-- Is my audience growing or declining?
-- Which repositories are creating the most momentum?
-- Are follower gains sustainable?
-- Which repositories deserve more attention?
-- What patterns emerge from audience and contribution activity?
+- **Audience Tracking**: Live follower gain, loss, and re-follow tracking keyed on immutable GitHub user IDs.
+- **Repository Traffic & Stats**: Historical views, clones, stars, and forks saved long after GitHub's 14-day limit expires.
+- **AI Audience Insights**: Intelligence engine evaluating audience velocity, engagement health, and optimal launch windows.
+- **Data Export Engine**: Export your complete historical follower data and traffic statistics to **CSV** or **JSON**.
+- **Live Profile README Badge**: Generate a dynamic SVG badge for your GitHub profile `README.md` showing live follower counters.
 
 ---
 
-## Features
+## Quick Start (One-Click Launch on Windows)
 
-- GitHub follower and following tracking
-- Historical audience snapshot analysis
-- Repository traffic and performance insights
-- Contribution and engagement monitoring
-- AI-style recommendation engine
-- Modern dashboard for analytics overview
-- Exportable insight data
-- OAuth-based GitHub login flow
-- Responsive dashboard UI
+1. **Configure your environment**:
+   Create a `backend/.env` file based on `backend/.env.example`:
+   ```dotenv
+   GITHUB_CLIENT_ID=your_github_oauth_app_client_id
+   GITHUB_CLIENT_SECRET=your_github_oauth_app_client_secret
+   GITHUB_OAUTH_REDIRECT_URI=http://localhost:8000/api/auth/github/callback
+   FRONTEND_URL=http://localhost:3000
+   MONGODB_URI=your_mongodb_connection_string
+   DB_NAME=github_analytics
+   ```
+   Create a GitHub OAuth App under **Settings → Developer settings → OAuth Apps** and set its authorization callback URL to the value of `GITHUB_OAUTH_REDIRECT_URI`. Users sign in on GitHub's website; GitPulse never asks for or receives their GitHub password.
 
----
-
-## Tech Stack
-
-- Frontend: Next.js
-- Backend: FastAPI
-- Database: MongoDB
-- Authentication: GitHub OAuth
-- Styling: Tailwind CSS
-- Visualization: Recharts
+2. **Launch Both Servers**:
+   Install and start Docker Desktop, then double click **`start.bat`** (or run
+    `.\start.bat` in a terminal). The launcher starts MongoDB, the FastAPI backend
+   (`http://localhost:8000`), and the Next.js frontend (`http://localhost:3000`).
+   Without Docker Desktop, start MongoDB separately on `localhost:27017` before
+   launching the script.
 
 ---
 
-## Project Structure
+## Advanced Features & API Endpoints
 
-```text
-gitpulse/
-├── backend/
-│   ├── app/
-│   ├── tests/
-│   ├── .env
-│   ├── requirements.txt
-│   ├── requirements-dev.txt
-│   └── Dockerfile
-├── frontend/
-│   ├── src/
-│   ├── public/
-│   ├── package.json
-│   ├── next.config.ts
-│   └── Dockerfile
-├── assets/
-│   ├── logo.svg
-│   └── dashboard-preview.png
-├── docker-compose.yml
-├── start.bat
-├── run.ps1
-├── README.md
-├── render.yaml
-├── scripts/
-└── .gitignore
+- `GET /api/analytics/ai-insights` — AI Audience Health & Growth recommendations.
+- `GET /api/analytics/export?format=csv` — Download follower and traffic history in CSV.
+- `GET /api/badge/followers` — Live SVG Badge for GitHub profile `README.md`.
+
+---
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
