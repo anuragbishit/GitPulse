@@ -1,8 +1,8 @@
 # GitPulse
 
-<div align="center">
+<p align="center">
   <img src="assets/logo.svg" alt="GitPulse Logo" width="220" />
-</div>
+</p>
 
 <p align="center">
   <img src="https://img.shields.io/badge/FastAPI-0.115.5-009688?style=for-the-badge&logo=fastapi&logoColor=white" alt="FastAPI" />
@@ -15,25 +15,23 @@
   <strong>GitHub Audience Intelligence & Growth Analytics Platform</strong>
 </p>
 
-GitPulse is a full-stack analytics platform built to help developers and creators track, understand, and optimize their GitHub audience and repository performance. It brings together live GitHub data, historical snapshots, and intelligent insights in one streamlined dashboard.
-
-From follower trends to repository opportunities, GitPulse turns raw GitHub activity into meaningful, actionable intelligence.
+GitPulse is a full-stack analytics dashboard for tracking GitHub audience growth, repository performance, and engagement trends in one place. It combines live GitHub data, historical snapshots, and insights to help developers understand what is driving growth and opportunity.
 
 ---
 
 ## Why GitPulse?
 
-GitHub exposes metrics, but not always the story behind them. GitPulse helps users answer questions like:
+GitPulse helps answer questions like:
 
 - Is my audience growing or declining?
 - Which repositories are creating the most momentum?
 - Are follower gains sustainable?
-- Which projects deserve more attention?
-- What patterns emerge across audience and contribution behavior?
+- Which repositories deserve more attention?
+- What patterns emerge from audience and contribution activity?
 
 ---
 
-## Key Features
+## Features
 
 - GitHub follower and following tracking
 - Historical audience snapshot analysis
@@ -43,7 +41,7 @@ GitHub exposes metrics, but not always the story behind them. GitPulse helps use
 - Modern dashboard for analytics overview
 - Exportable insight data
 - OAuth-based GitHub login flow
-- Responsive interface for desktop use
+- Responsive dashboard UI
 
 ---
 
@@ -55,15 +53,6 @@ GitHub exposes metrics, but not always the story behind them. GitPulse helps use
 - Authentication: GitHub OAuth
 - Styling: Tailwind CSS
 - Visualization: Recharts
-- Deployment-ready architecture
-
----
-
-## Platform Preview
-
-<div align="center">
-  <img src="assets/dashboard-preview.png" alt="GitPulse Dashboard Preview" width="100%" />
-</div>
 
 ---
 
