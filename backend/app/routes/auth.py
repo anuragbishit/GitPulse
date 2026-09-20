@@ -96,8 +96,8 @@ def github_callback(code: str = "", state: str = ""):
         key="gitpulse_session",
         value=session_id,
         httponly=True,
-        samesite="lax",
-        secure=False,
+        samesite="none",
+        secure=True,
         max_age=60 * 60 * 24 * 7,
     )
     return redirect
@@ -137,8 +137,8 @@ def local_login(data: LocalLoginRequest, response: Response):
         key="gitpulse_session",
         value=session_id,
         httponly=True,
-        samesite="lax",
-        secure=False,
+        samesite="none",
+        secure=True,
         max_age=60 * 60 * 24 * 7,
     )
     return {"ok": True, "username": login_username}
@@ -168,3 +168,4 @@ def me(request: Request):
             "login": session.get("username") or username,
         },
     }
+
