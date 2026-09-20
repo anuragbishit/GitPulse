@@ -42,7 +42,7 @@ if "%USE_COMPOSE%"=="1" (
   docker compose up -d --build api
 ) else (
   echo Docker Desktop is unavailable. The API will use the MongoDB URI from backend\.env.
-  start "GitPulse Backend" /d "%BACKEND_DIR%" cmd /k ".\venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
+  start "GitPulse Backend" /d "%BACKEND_DIR%" cmd /k "..\.venv\Scripts\python.exe -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000"
 )
 start "GitPulse Frontend" /d "%FRONTEND_DIR%" cmd /k "set NEXT_PUBLIC_API_BASE=%NEXT_PUBLIC_API_BASE% && npm.cmd run dev"
 
